@@ -1,0 +1,64 @@
+.packery:after 			{
+  content: ' ';
+  display: block;
+  clear: both;
+  }
+
+.item 					{
+  float: left;
+  }
+
+@media screen and (max-width:400px) 		{
+.item.v,.grid-sizer 	{ width:  calc(4/14*100%); }
+.item.h,.grid-sizer				{ width:  calc(9/14*100%); }
+.gutter-sizer 			{ width:  calc(1/14*100%); }
+.packery 				{ margin: calc(1.0/14*100%) calc(1.0/14*100%) calc(1.0/14*100%) calc(1.0/14*100%); } }
+
+@media screen and (min-width:400px) 		{
+.item.v,.grid-sizer 	{ width:  calc(4/19*100%); }
+.item.h , ,.grid-sizer				{ width:  calc(9/19*100%); }
+.gutter-sizer 			{ width:  calc(1/19*100%); }
+.packery 				{ margin: calc(1.0/19*100%) calc(1.0/19*100%) calc(1.0/19*100%) calc(1.0/19*100%); } }
+
+@media screen and (min-width: 600px) 		{
+.item.v,.grid-sizer 	{ width:  calc(4/24*100%); }
+.item.h, ,.grid-sizer 				{ width:  calc(9/24*100%); }
+.gutter-sizer 			{ width:  calc(1/24*100%); }
+.packery 				{ margin: calc(1.0/24*100%) calc(1.0/24*100%) calc(1.0/24*100%) calc(1.0/24*100%); } }
+
+@media screen and (min-width:800px) 		{
+.item.v,.grid-sizer 	{ width:  calc(4/29*100%); }
+.item.h,.grid-sizer 				{ width:  calc(9/29*100%); }
+.gutter-sizer 			{ width:  calc(1/29*100%); }
+.packery 				{ margin: calc(1.5/29*100%) calc(1.0/29*100%) calc(1.0/29*100%) calc(1.0/29*100%); } }
+
+@media screen and (min-width:1000px) 		{
+.item.v,.grid-sizer 	{ width:  calc(4/34*100%); }
+.item.h,.grid-sizer 				{ width:  calc(9/34*100%); }
+.gutter-sizer 			{ width:  calc(1/34*100%); }
+.packery 				{ margin: calc(2.0/34*100%) calc(1.0/34*100%) calc(1.0/34*100% calc(1.0/34*100%)); } }
+
+@media screen and (min-width:1200px) 		{
+.item.v,.grid-sizer 	{ width:  calc(4/39*100%); }
+.item.h,.grid-sizer 				{ width:  calc(9/39*100%); }
+.gutter-sizer 			{ width:  calc(1/39*100%); }
+.packery 				{ margin: calc(2.5/39*100%) calc(1.0/39*100%) calc(1.0/39*100% calc(1.0/39*100%)); } }
+
+@media screen and (min-width:1400px) 		{
+.item.v,.grid-sizer 	{ width:  calc(4/44*100%); }
+.item.h,.grid-sizer 				{ width:  calc(9/44*100%); }
+.gutter-sizer 			{ width:  calc(1/44*100%); }
+.packery 				{ margin: calc(3.0/44*100%) calc(1.0/44*100%) calc(1.0/44*100%) calc(1.0/44*100%); } }
+
+@media screen and (min-width:1600px) 		{
+.item.v,.grid-sizer 	{ width:  calc(4/49*100%); }
+.item.h,.grid-sizer 				{ width:  calc(9/49*100%); }
+.gutter-sizer 			{ width:  calc(1/49*100%); }
+.packery 				{ margin: calc(3.5/49*100%) calc(1.0/49*100%) calc(1.0/49*100%) calc(1.0/49*100%); } }
+
+@media screen and (min-width:1800px) 		{
+.item.v,.grid-sizer 	{ width:  calc(4/54*100%); }
+.item.h,.grid-sizer 				{ width:  calc(9/54*100%); }
+.gutter-sizer 			{ width:  calc(1/54*100%); }
+.packery 				{ margin: calc(4.0/54*100%) calc(1.0/54*100%) calc(1.0/54*100%) calc(1.0/54*100%); }
+}
