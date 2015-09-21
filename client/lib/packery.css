@@ -6,6 +6,35 @@
 
 .item 					{
   float: left;
+  color: #fff;
+  }
+
+  .item h5 {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    float: left;
+  }
+
+  .item .tags-card {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    float: left;
+  }
+
+  .item .options {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    float: right;
+  }
+
+  .item .isComplete {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    float: right;
   }
 
 @media screen and (max-width:400px) 		{

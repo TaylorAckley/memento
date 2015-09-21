@@ -4,22 +4,14 @@
   {{> newMemento }}
 </section>
   <section>
-    <div class="packery">
-        <div class="gutter-sizer"></div>
-        <div class="grid-sizer"> </div>
-        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
-        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
-        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
-        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
-        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
-        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
-        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
-        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
-        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
-        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
-        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
-        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
-
-     </div>
+{{#masonryContainer columnWidth=300 gutter=2 rowheight=340 transitionDuration="0.2s" id="MasonryContainer" }}
+        {{#each notes}}
+        {{#masonryElement "MasonryContainer"}}
+        <div class="item">
+        <img  class="img-responsive" src="img/{{img}}"> <h5>Test 1</h5> <span class="options"> <i class="fa fa-ellipsis-v fa-lg"></i></span> <span class="tags-card">#test #yeah</span> <span class="isComplete"><i class="fa fa-check fa-lg"></i></span>
+        </div>
+        {{/masonryElement}}
+        {{/each}}
+        {{/masonryContainer}}
   </section>
 </template>

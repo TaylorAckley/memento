@@ -11,6 +11,8 @@ aldeed:collection2
 aldeed:autoform
 fortawesome:fontawesome
 accounts-password
+accounts-base
+accounts-ui
 momentjs:moment
 iron:router
 underscorestring:underscore.string
@@ -21,3 +23,9 @@ jeremy:selectize
 dburles:packery
 iamkevingreen:imagesloaded
 twbs:bootstrap
+aldeed:autoform-select2
+zimme:select2-bootstrap3-css
+tsega:bootstrap3-datetimepicker@=3.1.3_3
+aldeed:autoform-bs-datetimepicker
+msavin:mongol
+robodo:masonrify

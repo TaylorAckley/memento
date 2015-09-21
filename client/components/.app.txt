@@ -1,0 +1,28 @@
+<template name="app">
+  {{ >navbar }}
+  <section class="top-hero">
+  {{> newMemento }}
+</section>
+  <section>
+    <div class="packery" id="packery-layout">
+        <div class="gutter-sizer"></div>
+        <div class="grid-sizer"> </div>
+        {{#each notes}}
+        <div class="item h"> <img  class="img-responsive" src="img/{{img}}"> <h5>Test 1</h5> <span class="options"> <i class="fa fa-ellipsis-v fa-lg"></i></span> <span class="tags-card">#test #yeah</span> <span class="isComplete"><i class="fa fa-check fa-lg"></i></span>  </div>
+        {{/each}}
+        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> <h5>Test 1</h5> <span class="options"> <i class="fa fa-ellipsis-v fa-lg"></i></span> <span class="tags-card">#test #yeah</span> <span class="isComplete"><i class="fa fa-check fa-lg"></i></span>  </div>
+        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
+        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
+        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
+        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
+        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
+        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
+        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
+        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
+        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
+        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
+        <div class="item h"> <img  class="img-responsive" src="http://placehold.it/300x340.jpg"> </div>
+
+     </div>
+  </section>
+</template>

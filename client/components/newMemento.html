@@ -1,6 +1,14 @@
 <template name="newMemento">
   <div class="container-fluid">
-    <h1>PlaceHolder</h1>
+    <div class="row">
+    <div class="col-md-5 col-md-offset-2">
+      {{#autoForm collection="Notes" id="insertNotesForm" type="method" meteormethod="addNote" validation="none" class="form-inline"}}
+      {{> afFieldInput name='title' label-class='sr-only' class="form-control"}}
+      {{> afFieldInput name="tags" type="select2" multiple=true select2Options=s2Opts style="width: 40%"}}
+    <button type="submit" class="btn btn-md btn-default">Create</button>
+  {{/autoForm}}
+    </div>
+  </div>
   </div>
 
 </template>
