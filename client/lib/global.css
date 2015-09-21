@@ -12,7 +12,12 @@ body {
 }
 
 .top-hero {
-  margin-top: 100px;
+  margin-top: 150px;
+}
+
+.middle-hero {
+  margin-top: 75px;
+  margin: auto 0;
 }
 
 h1,
