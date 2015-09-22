@@ -4,11 +4,20 @@
   {{> newMemento }}
 </section>
   <section class="middle-hero">
-{{#masonryContainer columnWidth=300 gutter=2 rowheight=340 transitionDuration="0.2s" id="MasonryContainer" }}
+{{#masonryContainer columnWidth=300 gutter=5 rowheight=340 transitionDuration="0.2s" id="MasonryContainer" }}
         {{#each notes}}
         {{#masonryElement "MasonryContainer"}}
         <div class="item">
-        <img  class="img-responsive" src="img/{{img}}"> <h5>Test 1</h5> <span class="options"> <i class="fa fa-ellipsis-v fa-lg"></i></span> <span class="tags-card">#test #yeah</span> <span class="isComplete"><i class="fa fa-check fa-lg"></i></span>
+        <img  class="img-responsive" src="img/{{img}}">
+        <h5>{{title}}</h5>
+        <span class="options"> <a href="{{pathFor route='edit' _id=this._id }}"><i class="fa fa-ellipsis-v fa-lg"></i></a></span>
+        <span class="tags-card">
+              {{ #each indexedArray tags }}
+              #{{ this }}&nbsp;
+              {{ /each }}
+        </span>
+        <span class="daysSince">{{daysSince CreatedOn}}</span>
+        <span class="isComplete"><a href="#" class="toggleChecked"><i class="fa fa-check fa-4x"></i></a></span>
         </div>
         {{/masonryElement}}
         {{/each}}

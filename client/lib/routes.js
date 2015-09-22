@@ -64,6 +64,18 @@ Router.route('app',  {
     }
 });
 
+Router.route('edit',  {
+  path: '/edit/:_id',
+  data: function() { return Notes.findOne(this.params._id); },
+  seo: {
+      title: {
+        text: 'Memento',
+        suffix: 'Edit',
+        separator: '-'
+      }
+    }
+});
+
 Router.route('register', {
     path: '/register',
     seo: {

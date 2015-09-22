@@ -9,6 +9,17 @@
   color: #fff;
   }
 
+  .item img {
+    opacity: .8;
+  }
+
+  .item span {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
   .item h5 {
     position: absolute;
     top: 15px;
@@ -30,10 +41,17 @@
     float: right;
   }
 
-  .item .isComplete {
+  .item .daysSince {
     position: absolute;
     bottom: 15px;
     right: 15px;
+    float: right;
+  }
+
+  .item .isComplete {
+    position: absolute;
+    top: 140px;
+    left: 120px;
     float: right;
   }
 
