@@ -76,6 +76,20 @@ console.log("Sending an email...");
       subject: subject,
       text: text
     });
+  },
+  githubRepo: function () {
+  this.unblock();
+  console.log("Method called for github");
+  var ownerVar = "TaylorAckley";
+  var repoVar = "memento";
+  try {
+    var result = HTTP.call("GET", "https://api.github.com/repos/TaylaylorAckley/memento/commits");
+    console.log(result);
+    return result;
+  } catch (e) {
+    // Got a network error, time-out or HTTP error in the 400 or 500 range.
+    return false;
   }
+}
 
 });

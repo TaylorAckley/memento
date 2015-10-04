@@ -1,0 +1,16 @@
+<template name="github">
+  <section class="middle-hero">
+    <div class="container">
+      <div class="row">
+        <h1>Github</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          {{#each getCommits }}
+          <p>SHA {{sha}}</p>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

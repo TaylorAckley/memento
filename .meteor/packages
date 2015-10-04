@@ -30,6 +30,7 @@ aldeed:autoform-select2
 msavin:mongol
 robodo:masonrify
 pcel:loading
+bruz:github-api
 mousetrap:mousetrap
 standard-minifiers
 meteor-base
@@ -45,6 +46,7 @@ random
 ejson
 spacebars
 check
+http
 accounts-facebook
 accounts-twitter
 accounts-github

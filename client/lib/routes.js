@@ -41,12 +41,12 @@ Router.onBeforeAction(function() {
 },
 
 {
-  only: ['profile', 'home', 'details']
+  only: ['profile', 'app', 'details']
 });
 
 Router.onBeforeAction(function() {
   if (Meteor.userId()) {
-    this.redirect('home');
+    this.redirect('app');
   }
   else {
     this.next();
@@ -163,6 +163,18 @@ Router.route('verifyEmail', {
         title: {
           text: 'Memento',
           suffix: 'Veryify Your Email',
+          separator: '-'
+        }
+      }
+
+});
+
+Router.route('github', {
+    path: '/github',
+    seo: {
+        title: {
+          text: 'Memento',
+          suffix: 'Github',
           separator: '-'
         }
       }
