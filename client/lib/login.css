@@ -1,0 +1,52 @@
+.login-section-top {
+  margin-top: 110px;
+}
+
+.login-section-top input[type="text"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: 'Lora';
+  font-size: 18px;
+  border: none;
+}
+.login-section-top input[type="text"]:focus {
+  outline: none;
+}
+
+.login-section-top input[type="email"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: 'Lora';
+  font-size: 18px;
+  border: none;
+}
+.login-section-top input[type="email"]:focus {
+  outline: none;
+}
+
+.login-section-top input[type="password"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: 'Lora';
+  font-size: 18px;
+  border: none;
+  box-shadow: none;
+
+}
+.login-section-top input[type="password"]:focus {
+  outline: none;
+}
+
+.login-control {
+  margin-bottom: 5px;
+}
+
+.login-section-mid {
+  margin-top: 100px;
+}
+
+.form-group.control1 { margin-bottom:10px; }
+.form-group.control2 { margin-bottom:10px; }

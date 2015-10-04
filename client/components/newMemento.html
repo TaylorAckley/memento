@@ -1,14 +1,16 @@
 <template name="newMemento">
   <div class="container-fluid">
     <div class="row">
-    <div class="col-md-5 col-md-offset-2">
-      {{#autoForm collection="Notes" id="insertNotesForm" type="method" meteormethod="addNote" validation="none" class="form-inline"}}
-      {{> afFieldInput name='title' label-class='sr-only' class="form-control"}}
-      {{> afFieldInput name="tags" type="select2" multiple=true select2Options=s2Opts style="width: 40%"}}
-    <button type="submit" class="btn btn-md btn-default">Create</button>
-  {{/autoForm}}
+      <div class="col-md-8">
+        {{#autoForm collection="Notes" id="insertNotesForm" type="method" meteormethod="addNote" validation="none" class="form-inline"}} {{> afFieldInput name='title' label-class='sr-only' class="form-control" style="width: 45%;"}} {{> afFieldInput name="tags"
+        type="select2" multiple=true select2Options=s2Opts class="form-control" style="width: 45%;"}}
+        <button type="submit" class="btn btn-md btn-default">Create</button>
+        {{/autoForm}}
+      </div>
+      <div class="col-md-4 pull-right">
+        <input type="checkbox" value="None" id="hideCompleted" name="check" class="js-switch hideCompleted" checked> <h6>Hide Completed?</h6>
+      </div>
     </div>
-  </div>
   </div>
 
 </template>

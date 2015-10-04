@@ -1,4 +1,5 @@
 Tracker.autorun(function () {
-Meteor.subscribe('theNotes');
-//Meteor.subscribe('userData');
+theNotes = Meteor.subscribe('theNotes');
+userData = Meteor.subscribe('userData');
+theFiles = Meteor.subscribe('files');
 });

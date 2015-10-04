@@ -10,17 +10,20 @@
         <div class="item">
         <img  class="img-responsive" src="img/{{img}}">
         <h5>{{title}}</h5>
-        <span class="options"> <a href="{{pathFor route='edit' _id=this._id }}"><i class="fa fa-ellipsis-v fa-lg"></i></a></span>
+        <span class="options"> <a href="{{pathFor route='details' _id=this._id title=this.title }}"><i class="fa fa-ellipsis-v fa-lg"></i></a></span>
         <span class="tags-card">
               {{ #each indexedArray tags }}
               #{{ this }}&nbsp;
               {{ /each }}
         </span>
-        <span class="daysSince">{{daysSince CreatedOn}}</span>
-        <span class="isComplete"><a href="#" class="toggleChecked"><i class="fa fa-check fa-4x"></i></a></span>
+        <span class="daysSince">{{daysSince createdOn}}</span>
+        <span class="isComplete"><button class="btn {{displayIsCompleteClass}} toggle-checked"><i class="fa fa-check fa-4x"></i></button></span>
         </div>
         {{/masonryElement}}
         {{/each}}
         {{/masonryContainer}}
+  </section>
+  <section class="middle-hero">
+    <p>Taylor Ackley | Fork me on <i  class="fa fa-github fa-lg"></i></p>
   </section>
 </template>

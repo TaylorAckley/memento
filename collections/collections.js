@@ -1,4 +1,5 @@
 Notes = new Mongo.Collection('notes');
+
 var Schemas = {};
 
 Schemas.Notes = new SimpleSchema({
@@ -16,11 +17,15 @@ Schemas.Notes = new SimpleSchema({
   description: {
     type: String,
     label: "Description",
-    max: 5000,
     optional: true,
     autoform: {
-      type: 'textarea'
-    }
+          afFieldInput: {
+            type: 'summernote',
+            settings: {
+              height: 250
+            }
+          }
+        }
   },
   tags: {
     type: [String],
@@ -28,6 +33,20 @@ Schemas.Notes = new SimpleSchema({
       type: "select2",
       afFieldInput: {
         multiple: true,
+        options: function() {
+          tagsArray = [];
+          ca = Notes.find({}, {tags: 1}).fetch();
+          //can = _.flatten(_.pluck(ca, "tags"), true);
+          can = _.chain(ca).map(function(it){return it.tags;}).flatten().uniq().value();
+          can.forEach(function(it) {
+              inner = {};
+              inner.value = it;
+              inner.label = it;
+              tagsArray.push(inner);
+          });
+          console.log(tagsArray);
+          return tagsArray;
+        }
       },
 
     },
@@ -52,6 +71,20 @@ Schemas.Notes = new SimpleSchema({
   priority: {
     type: String,
     label: "Priority",
+    autoform: {
+      type: "select2",
+      afFieldInput: {
+        options: function() {
+          return [
+              {label: "Critical", value: "Critical"},
+              {label: "Urgent", value: "Urgent"},
+              {label: "Moderate", value: "Moderate"},
+              {label: "low", value: "low"}
+          ];
+        }
+      },
+
+    },
     optional: true
   },
   owner: {
@@ -106,6 +139,11 @@ img: {
       }
     }
 
+},
+file: {
+  type: String,
+  optional: true,
+  denyInsert: true,
 }
 
 });

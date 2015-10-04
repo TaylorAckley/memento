@@ -1,3 +1,13 @@
+UI.registerHelper("displayIsCompleteClass", function() {
+  if (this.isComplete === false || null) {
+    return "btn-rd-red";
+  }
+  else {
+    return "btn-rd";
+  }
+});
+
+
 UI.registerHelper("priorityOptions", function() {
     return [
         {label: "Critical", value: "Critical"},
@@ -41,6 +51,16 @@ UI.registerHelper("daysSince", function(datetime) {
   if (moment) {
     // can use other formats like 'lll' too
     return moment(datetime).fromNow();
+  }
+  else {
+    return datetime;
+  }
+});
+
+UI.registerHelper("daysTo", function(datetime) {
+  if (moment) {
+    // can use other formats like 'lll' too
+    return moment(datetime).toNow();
   }
   else {
     return datetime;

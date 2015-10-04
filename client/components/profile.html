@@ -1,3 +1,52 @@
 <template name="profile">
-  <h1> Placeholder</h1>
+    {{ >navbar }}
+  <section class="low-hero">
+    <div class="container">
+      <div class="row">
+        {{ #with currentUser.services.facebook }}
+          <div class="col-md-2">
+                <p><img src="{{ fbPic "large" }}" class="img-circle"></p>
+          </div>
+          {{/with}}
+        <div class="col-md-7">
+          <div class="row">
+            <div  class="col-sm-8 col-sm-offset-4">
+            <h1> Profile</h1>
+          </div>
+          </div>
+          <div class="row">
+            <div  class="col-sm-4 text-right">
+          <h5>Name:</h5>
+        </div>
+            <div  class="col-sm-8 text-left">
+          {{ currentUser.profile.name }}
+        </div>
+        </div>
+          <div class="row">
+            <div  class="col-sm-4 text-right">
+          <h5>Email:</h5>
+        </div>
+            <div  class="col-sm-8 text-left">
+           {{ currentUser.emails.[0].address}}
+        </div>
+        </div>
+        <div class="row">
+          <div  class="col-sm-8 col-sm-offset-4">
+          <h6> <span class="green-text">{{ currentUser.profile.loginCount}}</span> logins since <span class="green-text">{{formatDate  currentUser.createdAt}}</span> </h6>
+        </div>
+        </div>
+        <div class="row">
+          <div  class="col-sm-8 col-sm-offset-4">
+           <button class="btn btn-default deleteUser">Delete Account</button> &nbsp; <button class="btn {{showChangePasswordClass}} changePassword">Change Password</button>
+        </div>
+        </div>
+        </div>
+        {{ #with showChangePasswordForm }}
+          <div class="col-md-3">
+              {{>changePassword}}
+          </div>
+          {{/with}}
+      </div>
+    </div>
+  </section>
 </template>

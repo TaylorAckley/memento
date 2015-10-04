@@ -1,3 +1,63 @@
 <template name="login">
-  <h1>Memento - Placeholder for login</h1>
+  {{> frontnav }}
+
+  <section class="login-section-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h3>Login</h3>
+          {{#with getLoginFlag }}
+          <p class="warning">Please login again!</p>
+          {{/with}}
+          <form class="login-form form-horizontal">
+            <div class="form-group login-control">
+              <label for="Email" class="col-sm-3 control-label">
+                Email</label>
+              <div class="col-sm-9">
+                <input type="email" class="form-control" id="email" value="taylora@knowledgeanywhere.com">
+              </div>
+            </div>
+            <div class="form-group login-control">
+              <label for="Password" class="col-sm-3 control-label">
+                Password</label>
+              <div class="col-sm-9">
+                <input type="password" name="" class="form-control" id="password" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-9">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" /> Remember me
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group control1">
+              <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-default btn-sm">Login</button>
+                <a href="{{pathFor route='register'}}">
+                  <button class="btn btn-default btn-sm">Create New Account</button>
+                </a>
+                <button class="btn btn-sm btn-default forgotPassword">Forgot Password</button>
+              </div>
+            </div>
+            <div class="form-group control2">
+              <label class="col-sm-3 control-label">
+                Social</label>
+              <div class="col-sm-9">
+                <button class="btn btn-default btn-sm btn-facebook">Login with Facebook</button> &nbsp;
+                <button class="btn btn-default btn-sm btn-twitter">Login with Twitter</button>&nbsp;
+                <button class="btn btn-default btn-sm btn-github">Login with Github</button>
+              </div>
+            </div>
+          <p id="form-messages"></p>
+          </form>
+        </div>
+        <div class="col-md-3">
+          {{ #with showForgotPasswordForm }} {{> forgotPassword }} {{/with}}
+        </div>
+      </div>
+    </div>
+  </section>
 </template>

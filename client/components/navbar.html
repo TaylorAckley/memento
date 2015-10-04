@@ -1,5 +1,5 @@
 <template name="navbar">
-  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-custom" role="navigation">
          <div class="container">
              <div class="navbar-header">
                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -18,13 +18,15 @@
                          <a href="#page-top"></a>
                      </li>
                      <li>
-                         {{> loginButtons}}
-                     </li>
-                     <li>
-                         <a class="page-scroll" href="#download">Download</a>
-                     </li>
-                     <li>
-                         <a class="page-scroll" href="#contact">Contact</a>
+                       <div class="dropdown">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            {{ currentUser.profile.handle }}
+                     </a>
+                     <ul class="dropdown-menu">
+                       <li><a href="{{pathFor route='profile'}}">Profile</a></li>
+                       <li><a href="#" class="logout">Logout</a></li>
+                     </ul>
+                   </div>
                      </li>
                  </ul>
              </div>

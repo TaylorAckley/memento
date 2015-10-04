@@ -1,7 +1,7 @@
 Meteor.startup(function () {
   smtp = {
     username: 'taylorackley@gmail.com',
-    password: 'TWhSJsop9O87zla-hFDmLg',
+    password: Meteor.settings.private.mandrillKey,
     server:   'smtp.mandrillapp.com',
     port: 587
  };

@@ -1,0 +1,56 @@
+<template name="details">
+  {{>navbar}}
+<section class="top-hero">
+<div class="container">
+  <div class="row">
+    {{ #if getEditMode}}
+    <div class="col-md-7 formStyles">
+      {{#autoForm collection="Notes" doc=this id="updateNotesForm" type="method-update" meteormethod="updateNote" validation="none"}}
+      <div class="form-group">
+        <label for="title">Title</label>
+      {{> afFieldInput name='title' class="form-control"}}
+      </div>
+      <div class="form-group">
+        <label for="tags">Tags</label>
+      {{> afFieldInput name="tags" type="select2" multiple=true select2Options=s2Opts class="form-control"}}
+      </div>
+      <div class="form-group">
+        <label for="due">Due</label>
+      {{> afFieldInput name='due' class="form-control"}}
+      </div>
+      <div class="form-group">
+        <label for="priority">Priority</label>
+      {{> afFieldInput name='priority' type="select2" class="form-control" select2Options=s2OptsDets}}
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+      {{> afFieldInput name='description' class="form-control"}}
+      </div>
+    <button type="submit" class="btn btn-md btn-default">Save</button> <button type="submit" class="btn btn-md btn-default cancelUpdate">Cancel</button>
+  {{/autoForm}}
+    </div>
+    {{else }}
+  <div class="col-md-2">
+    <p><button class="btn btn-default editMode">Edit</button>&nbsp; <button class="btn btn-default delete">Delete</button></p>
+    <p></p>
+    <p><button class="btn btn-default shareFB"><i class="fa fa-facebook"></i></button>&nbsp; <button class="btn btn-default shareTwitter"><i class="fa fa-twitter"></i></button></p>
+  </div>
+  <div class="col-md-7">
+<h2>{{title}}</h2>
+<h4>Created {{calendarDate createdOn}}</h4>
+<p>{{displayDue}}</p>
+<p>{{{ displayDescription }}}</p>
+</div>
+<div class="col-md-2">
+  <p><button class="btn {{displayIsCompleteClass}} toggle-checked"><i class="fa fa-check fa-4x"></i></button></p>
+  <h3>
+  {{ #each indexedArray tags }}
+  #{{ this }}<br>
+  {{ /each }}
+</h3>
+</div>
+{{/if}}
+</div>
+</div>
+</section>
+</template>

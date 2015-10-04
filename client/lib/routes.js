@@ -1,3 +1,7 @@
+Router.configure({
+  loadingTemplate: 'loading'
+});
+
 
 Router.plugin('seo', {
   defaults: {
@@ -37,7 +41,7 @@ Router.onBeforeAction(function() {
 },
 
 {
-  only: ['profile', 'home']
+  only: ['profile', 'home', 'details']
 });
 
 Router.onBeforeAction(function() {
@@ -50,7 +54,7 @@ Router.onBeforeAction(function() {
 },
 
 {
-  only: ['/']
+  only: ['login']
 });
 
 Router.route('app',  {
@@ -61,16 +65,28 @@ Router.route('app',  {
         suffix: 'Home',
         separator: '-'
       }
-    }
+    },
+    waitOn: function() {
+      return theNotes;
+    },
+    action: function(){
+
+ if ( this.ready() ){
+  this.render();
+}
+else {
+  this.render('loading');
+}
+}
 });
 
-Router.route('edit',  {
-  path: '/edit/:_id',
+Router.route('details',  {
+  path: '/details/:_id/:title',
   data: function() { return Notes.findOne(this.params._id); },
   seo: {
       title: {
         text: 'Memento',
-        suffix: 'Edit',
+        suffix: 'Details',
         separator: '-'
       }
     }
@@ -105,6 +121,48 @@ Router.route('profile', {
         title: {
           text: 'Memento',
           suffix: 'Profile',
+          separator: '-'
+        }
+      }
+
+});
+
+Router.route('verifyEmailToken', {
+    path: '/verifyEmailToken/:userToken',
+    data: function() {
+      return this.params.userToken; },
+    seo: {
+        title: {
+          text: 'Memento',
+          suffix: 'Veryify Your Email',
+          separator: '-'
+        }
+      }
+
+});
+
+Router.route('resetPassword', {
+    path: '/resetPassword/:userToken',
+    data: function() {
+      return this.params.userToken; },
+    seo: {
+        title: {
+          text: 'Memento',
+          suffix: 'Reset Password',
+          separator: '-'
+        }
+      }
+
+});
+
+
+
+Router.route('verifyEmail', {
+    path: '/verifyEmail',
+    seo: {
+        title: {
+          text: 'Memento',
+          suffix: 'Veryify Your Email',
           separator: '-'
         }
       }
