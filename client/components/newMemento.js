@@ -11,9 +11,10 @@ Template.newMemento.onRendered(function () {
 
 Template.newMemento.events({
 
-  "change .hideCompleted": function (e) {
+  "change .hideCompleted": function (event) {
         // Set the checked property to the opposite of its current value
         var checked = $(event.target).is(':checked');
         Session.setPersistent("hideCompleted", checked);
+        console.log(Session.get("hideCompleted"));
       }
 });

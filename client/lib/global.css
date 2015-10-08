@@ -22,6 +22,7 @@ body {
 
 .low-hero {
   margin-top: 75px;
+  margin-left: 0px;
 }
 
 .control2 {
@@ -276,4 +277,12 @@ body {
 
 .green-text {
   color: #42dca3;
+}
+
+.dark-green-text {
+  color: #27ae60;
+}
+
+.red-text {
+  color: #e74c3c;
 }

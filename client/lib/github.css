@@ -1,0 +1,19 @@
+.github .panel {
+  color: black;
+  background-color: white;
+}
+
+.github .panel p {
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.github .panel a {
+  color: #2980b9;
+  font-size: 10px;
+}
+
+.github .panel a:hover {
+  color: #2980b9;
+  font-size: 10px;
+}

@@ -77,19 +77,68 @@ console.log("Sending an email...");
       text: text
     });
   },
-  githubRepo: function () {
+  githubRepoCommits: function () {
   this.unblock();
-  console.log("Method called for github");
-  var ownerVar = "TaylorAckley";
-  var repoVar = "memento";
   try {
-    var result = HTTP.call("GET", "https://api.github.com/repos/TaylaylorAckley/memento/commits");
-    console.log(result);
-    return result;
+    var url = "https://api.github.com/repos/TaylorAckley/memento/commits";
+var result = Meteor.http.get(url, {headers: {'User-Agent':'TaylorAckley', 'Authorization':'token ' + Meteor.settings.private.github}});
+    return result.data;
   } catch (e) {
     // Got a network error, time-out or HTTP error in the 400 or 500 range.
-    return false;
+    console.log(e);
+    return e;
   }
+},
+githubRepo: function () {
+this.unblock();
+try {
+  var url = "https://api.github.com/repos/TaylorAckley/memento";
+var result = Meteor.http.get(url, {headers: {'User-Agent':'TaylorAckley', 'Authorization':'token ' + Meteor.settings.private.github}});
+  return result.data;
+} catch (e) {
+  // Got a network error, time-out or HTTP error in the 400 or 500 range.
+  console.log(e);
+  return e;
+}
+},
+githubReleases: function () {
+this.unblock();
+try {
+  var url = "https://api.github.com/repos/TaylorAckley/memento/releases";
+var result = Meteor.http.get(url, {headers: {'User-Agent':'TaylorAckley', 'Authorization':'token ' + Meteor.settings.private.github}});
+  return result.data;
+} catch (e) {
+  // Got a network error, time-out or HTTP error in the 400 or 500 range.
+  console.log(e);
+  return e;
+}
+},
+githubLatest: function (format) {
+this.unblock();
+try {
+  var url = "https://api.github.com/repos/TaylorAckley/memento/zipball";
+  var result = Meteor.http.get(url, {headers: {'User-Agent':'TaylorAckley', 'Authorization':'token ' + Meteor.settings.private.github}});
+  return result.data;
+} catch (e) {
+  // Got a network error, time-out or HTTP error in the 400 or 500 range.
+  console.log(e);
+  return e;
+}
+},
+githubReadme: function () {
+this.unblock();
+try {
+  var url = "https://api.github.com/repos/TaylorAckley/memento/readme";
+var result = Meteor.http.get(url, {headers: {'User-Agent':'TaylorAckley', 'Authorization':'token ' + Meteor.settings.private.github}});
+  var cleanedResult = {};
+  cleanedResult.content = new Buffer(result.data.content || '', 'base64').toString('utf8');
+  cleanedResult.name = result.data.name;
+  return cleanedResult;
+} catch (e) {
+  // Got a network error, time-out or HTTP error in the 400 or 500 range.
+  console.log(e);
+  return e;
+}
 }
 
 });

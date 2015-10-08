@@ -1,19 +1,28 @@
 Template.github.helpers({
-    getCommits: function() {
-        return HTTP.call("GET", "https://api.github.com/repos/TaylorAckley/memento/commits", function(error, result){
-          if (error) {
-            console.log(error);
-            return error;
-          }
-          else {
-            Session.set("getCommits", result.data);
-            return JSON.parse(result.data);
-
-          }
-        });
+getCommitsMethod: function() {
+  var commitResults = ReactiveMethod.call("githubRepoCommits");
+  console.log(commitResults);
+    return commitResults;
+},
+getRepoMethod: function() {
+  var repoResults = ReactiveMethod.call("githubRepo");
+  console.log(repoResults);
+    return repoResults;
+},
+githubLatest: function() {
+  var latestResults = ReactiveMethod.call("githubLatest");
+  console.log(latestResults);
+    return latestResults;
+},
+githubReadme: function() {
+  var readmeResults = ReactiveMethod.call("githubReadme");
+  console.log(readmeResults);
+    return readmeResults;
+},
+githubReleases: function() {
+  var releasesResults = ReactiveMethod.call("githubReleases");
+  console.log(releasesResults);
+    return releasesResults;
 },
 
-showGetCommits: function() {
-  return Session.get("getCommits");
-}
 });

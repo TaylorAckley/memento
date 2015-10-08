@@ -1,7 +1,6 @@
 Template.login.events({
     'submit .login-form': function (event, template) {
         event.preventDefault();
-        console.log("Logging in event: " + event);
         var email = event.target.email.value;
         var password = event.target.password.value;
 

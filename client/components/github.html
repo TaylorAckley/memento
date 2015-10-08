@@ -1,14 +1,57 @@
 <template name="github">
-  <section class="middle-hero">
-    <div class="container">
+  {{>navbar}}
+  <section class="low-hero">
+    <div class="container github">
       <div class="row">
-        <h1>Github</h1>
+        <div class="col-md-12">
+          <h2>{{getRepoMethod.full_name}} // <a href="{{getRepoMethod.html_url}}" target="_blank">view on github</a></h2>
+        </div>
+        <div class="row">
+        <div class="col-md-12">
+          <h6>{{getRepoMethod.description}}</h6>
+          <p><a href="{{getRepoMethod.git}}">Clone Repository</a> or <a href="{{githubLatest}}">Get Latest (Zip)</a></p>
+        </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
-          {{#each getCommits }}
-          <p>SHA {{sha}}</p>
+      <div class="col-md-6">
+        <h5>{{githubReadme.name}}</h5>
+        <p>{{#markdown}}{{githubReadme.content}}{{/markdown}}</p>
+      </div>
+      <div class="col-md-6">
+        <h6>{{formatDate getRepoMethod.created_at}}</h6>
+      </div>
+    </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          {{#each getCommitsMethod }}
+          <div class="panel panel-default">
+            <div class="panel-heading"> <p><strong>Commit:</strong> <a href="{{html_url}}" target="_blank">{{sha }}</a> <strong>made</strong> {{calendarDate commit.author.date}}</p></div>
+          <div class="panel-body"> <p>{{commit.message}}</p></div>
+          <div class="panel-footer"> <p><strong>Commited by:</strong> <a href="{{author.html_url}}" target="_blank">{{commit.author.name}}</a></p></div>
+          </div>
           {{/each}}
+        </div>
+        <div class="col-md-6">
+
+          <div class="panel panel-default">
+            <div class="panel-heading"> <h5>Releases</h5></div>
+          <div class="panel-body">
+
+            <table class="table-striped table-condensed">
+
+              <th>ID</th> <th>Version</th> <th>Download</th>
+              {{#each githubReleases }}
+              <tr>
+                <td><a href="{{id}}" target="_blank">{{.id}}</a></td>
+                <td>{{name}}</td>
+                <td>{{tag_name}}</td>
+                <td><a href="{{zipball_url}}">Download Zip</a></td>
+              </tr>
+              {{/each}}
+            </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

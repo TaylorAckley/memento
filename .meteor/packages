@@ -19,6 +19,7 @@ fortawesome:fontawesome
 accounts-password
 accounts-base
 momentjs:moment
+simple:reactive-method
 iron:router
 underscorestring:underscore.string
 email
@@ -36,6 +37,7 @@ standard-minifiers
 meteor-base
 mobile-experience
 mongo
+markdown
 blaze-html-templates
 session
 jquery

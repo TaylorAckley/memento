@@ -66,7 +66,7 @@ Schemas.Notes = new SimpleSchema({
   isComplete: {
     type: Boolean,
     optional: true,
-    denyInsert: true
+    defaultValue: false
   },
   priority: {
     type: String,

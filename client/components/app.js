@@ -2,7 +2,7 @@ Template.app.helpers({
 
   notes: function() {
     console.log("User is: " + Meteor.userId());
-    return Notes.find({isComplete: Session.get("hideCompleted")});
+    return Notes.find({owner: Meteor.userId(), isComplete: Session.get("hideCompleted")});
   },
   noteCount: function() {
       var noteCountInt = Notes.find({userid: Meteor.userId(), tags: Session.get("tagsFilter")}).count();
