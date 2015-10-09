@@ -12,16 +12,16 @@ body {
 }
 
 .top-hero {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .middle-hero {
-  margin-top: 75px;
+  margin-top: 50px;
   margin-left: 20px;
 }
 
 .low-hero {
-  margin-top: 75px;
+  margin-top: 25px;
   margin-left: 0px;
 }
 

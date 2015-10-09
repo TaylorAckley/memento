@@ -68,6 +68,18 @@ Schemas.Notes = new SimpleSchema({
     optional: true,
     defaultValue: false
   },
+  location2: {
+    type: String,
+    optional: true,
+    autoform: {
+      type: 'map',
+      afFieldInput: {
+        geolocation: true,
+        searchbox: true,
+        autolocate: true
+      }
+    }
+  },
   priority: {
     type: String,
     label: "Priority",

@@ -11,10 +11,11 @@ aldeed:autoform-bs-datetimepicker
 tsega:bootstrap3-datetimepicker@=3.1.3_3
 mpowaga:autoform-summernote
 djedi:sanitize-html
-yogiben:autoform-map
+lukemadera:autoform-googleplace
 vazco:universe-html-purifier
 abpetkov:switchery
 u2622:persistent-session
+yogiben:autoform-map
 fortawesome:fontawesome
 accounts-password
 accounts-base
