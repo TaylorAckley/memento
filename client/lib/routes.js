@@ -83,6 +83,9 @@ else {
 Router.route('details',  {
   path: '/details/:_id/:title',
   data: function() { return Notes.findOne(this.params._id); },
+  waitOn: function() {
+    return IRLibLoader.load('https://maps.googleapis.com/maps/api/js?libraries=places');
+  },
   seo: {
       title: {
         text: 'Memento',

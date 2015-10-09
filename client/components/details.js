@@ -40,7 +40,16 @@ Template.details.helpers({
       },
       s2OptsDets: function () {
         return {tags: false, placeholder: 'Priority'};
-      }
+      },
+      optsGoogleplace: function() {
+         return {
+           type: 'googleUI',
+           stopTimeoutOnKeyup: false
+           // googleOptions: {
+           //   componentRestrictions: { country:'us' }
+           // }
+         };
+ }
   });
 
   Template.details.onCreated(function () {

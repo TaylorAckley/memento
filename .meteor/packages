@@ -12,6 +12,7 @@ tsega:bootstrap3-datetimepicker@=3.1.3_3
 mpowaga:autoform-summernote
 djedi:sanitize-html
 lukemadera:autoform-googleplace
+manuelschoebel:wait-on-lib
 vazco:universe-html-purifier
 abpetkov:switchery
 u2622:persistent-session

@@ -72,6 +72,7 @@ localstorage@1.0.5
 logging@1.0.8
 lookback:seo@1.1.0
 lukemadera:autoform-googleplace@1.0.6
+manuelschoebel:wait-on-lib@0.3.0
 markdown@1.0.5
 matb33:collection-hooks@0.8.0
 meteor@1.1.9
