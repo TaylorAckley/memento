@@ -9,6 +9,7 @@
   font-family: 'Lora';
   font-size: 18px;
   border: none;
+  border: 1px inset black;
 }
 .login-section-top input[type="text"]:focus {
   outline: none;
